@@ -1,0 +1,5 @@
+{
+  "name": "en",
+  "verbose_name": "English",
+  "example_translation": "Hello, %s!"
+}
