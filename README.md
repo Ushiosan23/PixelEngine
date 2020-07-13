@@ -1,2 +1,0 @@
-# PixelEngine
-Pixel-art creator.
