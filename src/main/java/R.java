@@ -1,5 +1,7 @@
 import fx.soft.pixelengine.system.OS;
 import kotlin.text.Regex;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -16,6 +18,7 @@ public final class R {
 	 *
 	 * @return list with language resources.
 	 */
+	@NotNull
 	public static AppResource[] getLanguageResources() {
 		Regex regex = new Regex("strings\\.(xml|json)");
 		List<URL> urlLanguages = OS.Path.INSTANCE.walkURL(languages.url(), regex, false);
@@ -77,7 +80,7 @@ public final class R {
 		 *
 		 * @param resource target resource to read
 		 */
-		protected AppResource(URL resource) {
+		protected AppResource(@NotNull URL resource) {
 			this(resource.getPath());
 			this.url = resource;
 		}
@@ -97,6 +100,7 @@ public final class R {
 		 * @return {@link InputStream} resource file or null if not exists
 		 * Check console for error information
 		 */
+		@Nullable
 		public InputStream stream() {
 			try {
 				if (url != null)
