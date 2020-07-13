@@ -56,7 +56,7 @@ class LanguageSelector(languageResources: List<R.AppResource>) {
 		languageResources.forEach {
 			try {
 				if (it.exists())
-					languageList.add(Language(it.stream(), Language.getFileLanguageType(it.url())))
+					languageList.add(Language(it.stream()!!, Language.getFileLanguageType(it.url())))
 			} catch (err: Exception) {
 				err.printStackTrace()
 			}
