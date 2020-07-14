@@ -1,7 +1,8 @@
 plugins {
-	groovy
 	java
 	application
+	groovy
+	id("org.jetbrains.dokka") version "0.10.1"
 	kotlin("jvm") version "1.3.72"
 	kotlin("plugin.serialization") version "1.3.72"
 }
@@ -36,7 +37,7 @@ tasks.jar {
 	// Set manifest configuration
 	manifest {
 		attributes(
-			"Main-Class" to "fx.soft.pixelengine.app.Program",
+			"Main-Class" to "fx.soft.pixelengine.app.Main",
 			"Specification-Title" to rootProject.name,
 			"Specification-Version" to archiveVersion.get(),
 			"Specification-Vendor" to "softfx"
@@ -58,4 +59,16 @@ tasks.jar {
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 	kotlinOptions.jvmTarget = "11"
 	kotlinOptions.includeRuntime = true
+}
+
+// Dokka documentation configuration
+tasks.dokka {
+	outputFormat = "html"
+	outputDirectory = "$buildDir/docs"
+	configuration {
+		includeNonPublic = true
+		skipEmptyPackages = true
+		reportUndocumented = true
+		jdkVersion = 8
+	}
 }

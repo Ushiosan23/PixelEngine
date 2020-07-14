@@ -11,7 +11,6 @@ public final class R {
 
 	public static final AppResource languages = new AppResource("i18n");
 	public static final AppResource baseConfig = new AppResource("baseConfig.xml");
-	public static final AppResource es = new AppResource("i18n/en/strings.xml");
 
 	/**
 	 * Get all language resource.
