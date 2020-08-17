@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- imports -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- container -->
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            styleClass="dialog_container">
+	
+	<!-- top section -->
+	<top>
+		<FlowPane alignment="CENTER">
+			<Label styleClass="dialog_error" fx:id="errorMessage"/>
+		</FlowPane>
+	</top>
+	
+	<!-- center options -->
+	<center>
+		<GridPane styleClass="dialog_options">
+			<!-- project name -->
+			<Label text="Project name: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+			<TextField GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS" fx:id="prjName"/>
+			
+			<!-- project location -->
+			<Label text="Project location: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+			<TextField GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS" fx:id="prjLocation"/>
+			<VBox GridPane.columnIndex="2" GridPane.rowIndex="1">
+				<Button text="📁" styleClass="button_select" fx:id="prjSelectLocation"/>
+			</VBox>
+		</GridPane>
+	</center>
+	
+	<!-- bottom section -->
+	<bottom>
+		<HBox styleClass="dialog_footer">
+			<Button text="Cancel" styleClass="dialog_action" fx:id="prjActionCancel"/>
+			<Button text="Accept" styleClass="dialog_action" fx:id="prjActionAccept"/>
+		</HBox>
+	</bottom>
+
+</BorderPane>

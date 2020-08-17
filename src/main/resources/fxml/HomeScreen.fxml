@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Imports -->
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import fx.soft.pixelengine.javafx.controls.FXButtonResource ?>
+
+<!-- Home panel container -->
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fx.soft.pixelengine.controllers.HomeScreenController"
+            fx:id="sceneContainer">
+	<!-- header container -->
+	<top>
+		<!-- toolbar container -->
+		<BorderPane styleClass="home_header">
+			<!-- logo -->
+			<left>
+				<fx:include source="imports/HomeLogo.fxml"/>
+			</left>
+			<!-- search -->
+			<right>
+				<VBox styleClass="home_search">
+					<TextField promptText="%home.ui.header_search" focusTraversable="false" fx:id="txtSearch"/>
+				</VBox>
+			</right>
+		</BorderPane>
+	</top>
+	<!-- left sidebar -->
+	<left>
+		<VBox styleClass="home_sidebar" fx:id="sidebarContainer">
+			<!-- Sections -->
+			<Label styleClass="home_sidebar_header" text="%home.ui.header_sections"/>
+			<FXButtonResource styleClass="home_sidebar_action" text="%home.ui.button_home"
+			                  resource="fxml/sections/home/Home.fxml"/>
+			<FXButtonResource styleClass="home_sidebar_action" text="%home.ui.button_learn"
+			                  resource="fxml/sections/home/Learn.fxml"/>
+			<!-- Works -->
+			<Label styleClass="home_sidebar_header" text="%home.ui.header_works"/>
+			<FXButtonResource styleClass="home_sidebar_action" text="%home.ui.button_examples"
+			                  resource="fxml/sections/home/Examples.fxml"/>
+			<FXButtonResource styleClass="home_sidebar_action" text="%home.ui.button_discover"
+			                  resource="fxml/sections/home/Discover.fxml"/>
+			<!-- Button events -->
+			<VBox styleClass="home_special_container">
+				<Button styleClass="home_sidebar_special" text="%home.ui.button_create_new" fx:id="btnNew"/>
+				<Button styleClass="home_sidebar_special" text="%home.ui.button_open" fx:id="btnOpen"/>
+			</VBox>
+		</VBox>
+	</left>
+	<!-- center container -->
+	<center/>
+</BorderPane>
